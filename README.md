@@ -46,9 +46,9 @@ pip install cs50 flask flask_session werkzeug
 .
 ├── app.py                # Main Flask application
 ├── templates/            # HTML templates (Jinja2)
-├── screenshots/            # Screenshots folder
+├── screenshots/          # Screenshots folder
 ├── requirements.txt      # Project dependencies
-├── store.db      # SQLite database
+├── store.db              # SQLite database
 └── README.md             # This file
 ```
 
