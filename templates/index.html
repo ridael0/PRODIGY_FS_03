@@ -1,0 +1,35 @@
+{% extends "layout.html" %}
+
+{% block title %}Home{% endblock %}
+
+{% block main %}
+<div class="row">
+    <div class="col-12">
+        <h1 class="mb-4">Welcome to Our Local Store</h1>
+        <p class="lead">Browse our fresh, local products and shop online!</p>
+    </div>
+</div>
+
+<div class="row">
+    {% for product in products %}
+    <div class="col-md-4 mb-4">
+        <div class="card product-card h-100">
+            <img src="{{ product.image_url }}" class="card-img-top product-image" alt="{{ product.name }}">
+            <div class="card-body d-flex flex-column">
+                <h5 class="card-title">{{ product.name }}</h5>
+                <p class="card-text">{{ product.description }}</p>
+                <div class="mt-auto">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <span class="h5 text-success">${{ "%.2f"|format(product.price) }}</span>
+                        <span class="text-muted">Stock: {{ product.stock }}</span>
+                    </div>
+                    <div class="mt-2">
+                        <a href="/product/{{ product.id }}" class="btn btn-outline-primary">View Details</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}
